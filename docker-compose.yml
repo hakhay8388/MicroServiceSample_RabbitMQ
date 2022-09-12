@@ -1,0 +1,37 @@
+version: '2.1'
+
+services:
+    rabbitmq3:
+        container_name: "rabbitmq"
+        image: rabbitmq:3.8-management-alpine
+        environment:
+            - RABBITMQ_DEFAULT_USER=myuser
+            - RABBITMQ_DEFAULT_PASS=mypassword
+        ports:
+            # AMQP protocol port
+            - '5672:5672'
+            # HTTP management UI
+            - '15672:15672'
+        healthcheck:
+            test: ["CMD-SHELL", "if rabbitmqctl status; then \nexit 0 \nfi \nexit 1"]
+            interval: 10s
+            retries: 5
+
+    elasticsearchapp:
+        image: ${DOCKER_REGISTRY-}elasticsearchapp_rabbit
+        build:
+            context: .
+            dockerfile: ElasticSearchApp/Dockerfile
+        depends_on:
+            rabbitmq3:
+                condition: service_healthy    
+       
+    postgresapp:
+        image: ${DOCKER_REGISTRY-}postgresapp_rabbit
+        build:
+            context: .
+            dockerfile: PostgresApp/Dockerfile
+        depends_on:
+            rabbitmq3:
+                condition: service_healthy    
+    

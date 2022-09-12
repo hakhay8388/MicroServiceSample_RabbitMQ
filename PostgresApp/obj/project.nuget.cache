@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "yBY14vtX82jqUjuJDcZMkRLYblY6bkqD3JXTR/3+vrTsFCy32ELpk3KWitYBhZSx/d+lN3VY3d5xtxDJ1BZsxA==",
+  "success": true,
+  "projectFilePath": "H:\\VirtualStyle_Projects\\MicroServiceSample_RabbitMQ\\PostgresApp\\PostgresApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\VirtualStyle\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
+    "C:\\Users\\VirtualStyle\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\VirtualStyle\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\VirtualStyle\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\VirtualStyle\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
