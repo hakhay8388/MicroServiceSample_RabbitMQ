@@ -68,11 +68,6 @@ namespace UnitTests
         {
             RabbitTestString = "";
             RabbitConnectorSender = new cRabbitConnector("localhost", "topic", "myuser", "mypassword");
-            ///
-            /// Þuanda ayaða kalkan rabbit servisi ayný grup ID ile tek consumer üzerinden çalýþýyor.
-            /// Birden fazla peþpeþe test sýrasýnda testler baþarýsýz çýktýðý için random bir grup oluþturuluyor.
-            /// Bu gruba belirli bir süre istek olmayýnca rabbit tarafýndan düþürüldüðü için poroblem olmuyor.
-            //
             RabbitConnectorSender.Consumer.StartListener(ExchangeType.Fanout, this);
             Thread.Sleep(10000);
         }
