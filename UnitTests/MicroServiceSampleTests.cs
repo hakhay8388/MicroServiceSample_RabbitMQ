@@ -67,7 +67,7 @@ namespace UnitTests
         public void Test2_RabbitTest_Consumer()
         {
             RabbitTestString = "";
-            RabbitConnectorSender = new cRabbitConnector("127.0.0.1:5672", "topic", "myuser", "mypassword");
+            RabbitConnectorSender = new cRabbitConnector("localhost", "topic", "myuser", "mypassword");
             ///
             /// Þuanda ayaða kalkan rabbit servisi ayný grup ID ile tek consumer üzerinden çalýþýyor.
             /// Birden fazla peþpeþe test sýrasýnda testler baþarýsýz çýktýðý için random bir grup oluþturuluyor.
@@ -81,7 +81,7 @@ namespace UnitTests
         [TestMethod]
         public void Test3_RabbitTest_ProduceAndControl()
         {
-            RabbitConnectorReceiever = new cRabbitConnector("127.0.0.1:5672", "topic", "myuser", "mypassword");
+            RabbitConnectorReceiever = new cRabbitConnector("localhost", "topic", "myuser", "mypassword");
             RabbitConnectorReceiever.Producer.Init(ExchangeType.Fanout);
             RabbitConnectorReceiever.Producer.Produce(RABBIT_TEST);
 
